@@ -3,7 +3,7 @@
 /**
  * enqueue - the Function that add node to the bottom of the queue.
  * @head: the Head
- * @value: new value
+ * @n: new value
  * Return: Null
  */
 void enqueue(stack_t **head, int n)
