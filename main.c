@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	file = fopen(argv[1], "r");
@@ -30,13 +30,14 @@ int main(int argc, char *argv[])
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
-
-	while ((read_line = getline(&content, &size, file)) != -1)
+	while (read_line > 0)
 	{
+		content = NULL;
 		line_number++;
 		env.content = content;
+		read_line = getline(&content, &size, file);
 
 		if (read_line > 0)
 		{
