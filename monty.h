@@ -61,7 +61,7 @@ void _stack(stack_t **head, unsigned int line_number);
 void handle_error(unsigned int line_number, stack_t **head);
 void enqueue(stack_t **head, int new_value);
 void pushTOStack(stack_t **head, int new_value);
-
+void pall(stack_t **head, unsigned int line_number);
 
 
 
