@@ -59,9 +59,19 @@ void free_stacks(stack_t *head);
 void _queue(stack_t **head, unsigned int line_number);
 void _stack(stack_t **head, unsigned int line_number);
 void handle_error(unsigned int line_number, stack_t **head);
-void enqueue(stack_t **head, int new_value);
-void pushTOStack(stack_t **head, int new_value);
+void enqueue(stack_t **head, int n);
+void pushTOStack(stack_t **head, int n);
 void pall(stack_t **head, unsigned int line_number);
+void subs(stack_t **head, unsigned int line_number);
+void _rotl(stack_t **head, __attribute__((unused)) unsigned int line_number);
+void _rotr(stack_t **head, __attribute__((unused)) unsigned int line_number);
+void _pchar(stack_t **head, unsigned int line_number);
+void _pstr(stack_t **head, unsigned int line_number);
+void _nop(stack_t **head, unsigned int line_number);
+void add(stack_t **head, unsigned int line_number);
+void _div(stack_t **head, unsigned int line_number);
+void _mul(stack_t **head, unsigned int line_number);
+void _mod(stack_t **head, unsigned int line_number);
 
 
 
