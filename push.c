@@ -21,7 +21,7 @@ void push(stack_t **head, unsigned int line_number)
 	}
 	for (i = (env.arg[0] == '-'); env.arg[i]; ++i)
 	{
-		if (!isdigit(env.arg[1]))
+		if (!isdigit(env.arg[i]))
 		{
 			handle_error(line_number, head);
 		}
