@@ -16,10 +16,6 @@ void free_stacks(stack_t *head)
 	}
 }
 
-
-mod.c
-
-#include "monty.h"
 /**
  * _mod - this funtion computes the division
  * @head: The Head stack

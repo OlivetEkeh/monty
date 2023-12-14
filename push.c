@@ -55,11 +55,7 @@ void _push(stack_t **head, unsigned int line_number)
 		enqueue(head, value);
 	}
 }
-
-
-add.c 
-
-#include "monty.h"
+ 
 
 /**
  * _add - This adds two elements to the top of the stack
