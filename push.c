@@ -11,7 +11,7 @@ void push(stack_t **head, unsigned int line_number)
 	size_t i;
 	int value;
 
-	if (!env.arg || *env.arg)
+	if (!env.arg || !*env.arg)
 	{
 		if (*head == NULL)
 		{

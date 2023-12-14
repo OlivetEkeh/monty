@@ -35,7 +35,7 @@ int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file
 	char *op;
 
 	op = strtok(content, "\n\t");
-	if (op && op[0] == '#')
+	if (op && env.arg && env.arg[0] == '#')
 	{
 		return (0);
 	}
