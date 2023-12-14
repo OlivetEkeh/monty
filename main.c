@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	char *content = NULL;
 	size_t size = 0;
 	ssize_t read_line;
-	stack_t *stack = NULL;
+	stack_t *head = NULL;
 	unsigned int line_number = 0;
 
 	if (argc != 2)
@@ -40,14 +40,14 @@ int main(int argc, char *argv[])
 
 		if (read_line > 0)
 		{
-			execute(content, &stack, line_number, file);
+			execute(content, &head, line_number, file);
 		}
 
 		free(content);
 		content = NULL;
 	}
 
-	free_stacks(stack);
+	free_stacks(head);
 	fclose(env.file);
 	free(content);
 

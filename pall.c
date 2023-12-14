@@ -6,7 +6,7 @@
  * @line_number: the Integer line
  * Return: Null
  */
-void pall(stack_t **head, unsigned int line_number)
+void _pall(stack_t **head, unsigned int line_number)
 {
         stack_t *value;
         (void)line_number;

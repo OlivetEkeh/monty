@@ -22,9 +22,10 @@ void enqueue(stack_t **head, int n)
 	newNode->n = n;
 	newNode->next = NULL;
 
-	while (currentNode && currentNode->next)
+	if (currentNode)
 	{
-		currentNode = currentNode->next;
+		while (currentNode->next)
+			currentNode = currentNode->next;
 	}
 
 	if (!currentNode)

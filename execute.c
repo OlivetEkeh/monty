@@ -6,17 +6,17 @@
  * @head: the stack head
  * @file: the monty file 
  * @line_number: int line 
- * Return: 0 on success, 1 on failure
+ * Return: NUll
  */
 
-int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file)
+int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 {
 	instruction_t opst[] = {
-		{"push", push},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
+		{"push", _push},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
 		{"rotl", _rotl},
 		{"rotr", _rotr},
 		{"pchar", _pchar},
@@ -24,7 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file
 		{"pstr", _pstr},
 		{"div", _div},
 		{"mod", _mod},
-		{"pall", pall},
+		{"pall", _pall},
 		{"mul", _mul},
 		{"nop", _nop},
 		{"queue", _queue},
@@ -46,7 +46,7 @@ int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{
-			opst[i].f(stack, line_number);
+			opst[i].f(head, line_number);
 			return (0);
 		}
 		i++;
@@ -57,7 +57,7 @@ int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 		fclose(file);
 		free(content);
-		free_stacks(*stack);
+		free_stacks(*head);
 		exit(EXIT_FAILURE);
 	}
 

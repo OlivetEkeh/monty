@@ -6,7 +6,7 @@
  * @line_number: the line integer
  * Return: Null
  */
-void swap(stack_t **head, unsigned int line_number)
+void _swap(stack_t **head, unsigned int line_number)
 {
 	int tem;
 	stack_t *first, *second;

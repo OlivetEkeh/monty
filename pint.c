@@ -6,7 +6,7 @@
  * @line_num: the line integer
  * Return: Null
  */
-void pint(stack_t **head, unsigned int line_number)
+void _pint(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL)
 	{

@@ -6,7 +6,7 @@
  * @line_number: the line integer
  * REturn: Null
  */
-void pop(stack_t **head, unsigned int line_number)
+void _pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *value;
 
