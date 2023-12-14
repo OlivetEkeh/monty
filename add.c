@@ -4,6 +4,7 @@
  * _add - This adds two elements to the top of the stack
  * @head: The head
  * @line_number: The Integer Line
+ * Return: 0
  */
 void _add(stack_t **head, unsigned int line_number)
 {
@@ -23,7 +24,6 @@ void _add(stack_t **head, unsigned int line_number)
 	first = *head;
 	second = first->next;
 	addition = first->n + second->n;
-
 	second->n = addition;
 	*head = second;
 	free(first);

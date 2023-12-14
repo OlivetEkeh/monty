@@ -1,4 +1,3 @@
-push 1
-invalid_instruction
+push 3
 push 2
-pall
+push 1

@@ -9,10 +9,11 @@
  * Return: NUll
  */
 
-int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file)
 {
 	instruction_t opst[] = {
 		{"push", _push},
+		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
@@ -24,7 +25,6 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		{"pstr", _pstr},
 		{"div", _div},
 		{"mod", _mod},
-		{"pall", _pall},
 		{"mul", _mul},
 		{"nop", _nop},
 		{"queue", _queue},
@@ -34,8 +34,8 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 	unsigned int i = 0;
 	char *op;
 
-	op = strtok(content, "\n\t");
-	if (op && env.arg && env.arg[0] == '#')
+	op = strtok(content, " \n\t");
+	if (op && op[0] == '#')
 	{
 		return (0);
 	}
@@ -46,7 +46,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{
-			opst[i].f(head, line_number);
+			opst[i].f(stack, line_number);
 			return (0);
 		}
 		i++;
@@ -57,7 +57,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 		fclose(file);
 		free(content);
-		free_stacks(*head);
+		free_stacks(*stack);
 		exit(EXIT_FAILURE);
 	}
 
