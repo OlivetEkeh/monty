@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pop - the function that prints the top
+ * _pop - the function that prints the top
  * @head: the head
  * @line_number: the line integer
  * REturn: Null
